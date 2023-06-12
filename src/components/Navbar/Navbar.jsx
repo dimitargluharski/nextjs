@@ -1,14 +1,5 @@
 import Link from "next/link";
 
-// import {
-//   FiHome,
-//   FiClock,
-//   FiAward,
-//   FiUsers,
-//   FiUser,
-//   FiSearch,
-// } from "react-icons/fi";
-
 export default function Navbar() {
   const isActive = true;
   const inactive = "hover:bg-blue-700";
@@ -26,10 +17,10 @@ export default function Navbar() {
         <Link href="/" className={`px-4 py-2 ${isActive ? active : inactive}`}>
           Home
         </Link>
-        <Link href="/matches" className="px-4 py-2">
-          Matches
+        <Link href="live-score" className="px-4 py-2">
+          Live
         </Link>
-        <Link href="/leagues" className="px-4 py-2">
+        <Link href="leagues" className="px-4 py-2">
           Leagues
         </Link>
         <Link href="/teams" className="px-4 py-2">
