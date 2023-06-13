@@ -7,11 +7,8 @@ const Details = (props) => {
   console.log("to fetch data for current object use", props.params.id);
   return (
     <div>
-      <h1>Details</h1>
-      <Panel />
-      <Panel />
-      <Panel />
-      <Panel />
+      <Panel title="Preview Match" />
+      <Panel title="Next Match">heloooo</Panel>
     </div>
   );
 };
