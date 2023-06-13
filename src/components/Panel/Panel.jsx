@@ -1,7 +1,8 @@
-const Panel = () => {
+const Panel = ({ title, children }) => {
   return (
     <section>
-      <h1>panel component</h1>
+      <header>{title}</header>
+      <main>{children}</main>
     </section>
   );
 };
