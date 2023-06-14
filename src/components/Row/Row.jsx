@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import Predictions from "../Predictions/Predictions";
+
 const Row = (props) => {
   return (
     <Link href={`/live-score/${props.fixture.id}`}>
@@ -13,6 +15,7 @@ const Row = (props) => {
         <div className="flex-1">
           {props.teams.home.name} - {props.teams.away.name}
         </div>
+        <Predictions {...props} />
       </div>
     </Link>
   );
