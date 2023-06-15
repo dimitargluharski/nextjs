@@ -15,7 +15,7 @@ const Row = (props) => {
         <div className="flex-1">
           {props.teams.home.name} - {props.teams.away.name}
         </div>
-        {/* <Predictions {...props} /> */}
+        <Predictions {...props} />
       </div>
     </Link>
   );

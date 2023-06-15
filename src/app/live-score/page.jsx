@@ -15,7 +15,6 @@ const options = {
 
 const MatchesList = () => {
   const [matches, setMatches] = useState([]);
-  const [filteredMatches, setFilteredMatches] = useState([]);
 
   useEffect(() => {
     fetch(url, options)
@@ -25,28 +24,16 @@ const MatchesList = () => {
       })
       .catch((err) => console.log(err));
 
-    // Cleanup
+    // cleanup
     return () => {};
   }, []);
 
-  const handleSearch = (searchTerm) => {
-    const filtered = matches.filter(
-      (match) =>
-        match.teams.home.name
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase()) ||
-        match.teams.away.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    setFilteredMatches(filtered);
-  };
-
   return (
     <div>
-      <SearchField onSearch={handleSearch} />
-      {(filteredMatches.length > 0 ? filteredMatches : matches).map((match) => (
-        <Row {...match} key={match.fixture.id} />
-      ))}
+      <SearchField />
+      {matches.map((match) => {
+        return <Row {...match} key={match.fixture.id} />;
+      })}
     </div>
   );
 };
