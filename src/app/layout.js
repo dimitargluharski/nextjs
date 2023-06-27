@@ -1,8 +1,11 @@
+"use client";
+
 import "./globals.css";
 import { Inter } from "next/font/google";
 
 import Navbar from "@/components/Navbar/Navbar";
 import Header from "@/components/Header/Header";
+import { AuthProvider } from "@/context/AuthContext/AuthContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,14 +18,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="grid grid-cols-12">
-        <aside className="col-span-2 bg-gray-200">
-          <Navbar />
-        </aside>
+        <AuthProvider>
+          <aside className="col-span-2 bg-gray-200">
+            <Navbar />
+          </aside>
 
-        <main className="col-span-10">
-          <Header />
-          {children}
-        </main>
+          <main className="col-span-10">
+            <Header />
+            {children}
+          </main>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-// import { format } from "date-fns";
 
 import UserPanel from "../UserPanel/UserPanel";
 
@@ -14,12 +13,10 @@ const Header = () => {
   today = mm + "/" + dd + "/" + yyyy;
 
   return (
-    <section className="flex justify-between items-center bg-gray-100 py-4 px-8">
-      <div className="bg-green-500 text-white py-2 px-4 rounded-lg mr-4">
-        <div className="text-lg font-semibold">Welcome, Anastacia!</div>
+    <section className="flex justify-end items-center bg-gray-100 py-4 px-8">
+      <div className="bg-slate-500 text-white py-2 px-4 rounded-lg mr-4">
+        <UserPanel />
       </div>
-
-      <UserPanel />
     </section>
   );
 };
